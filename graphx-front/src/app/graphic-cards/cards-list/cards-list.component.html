@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-8">
+        <br>
+        <graphx-pagination [cardCount]="cardList.count" (pageSizeChange)="updatePageSize($event)" (pageChange)="updatePage($event)"></graphx-pagination>
+    </div>
+</div>
+<div class="row">
+    <div class="col-8">
+        <graphx-card *ngFor="let card of cardList?.results" [card]="card" (commentsToggle)="toggleComments($event)" (gradeChange)="updateGrade($event)"></graphx-card>
+    </div>
+    <div class="col-4">
+        <graphx-comments-list *ngIf="showComments" [cardId]="cardId"></graphx-comments-list>
+    </div>
+</div>

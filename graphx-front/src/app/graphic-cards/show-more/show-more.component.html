@@ -1,0 +1,15 @@
+<div *ngIf="description.length <= 130">
+    <p>
+        {{description}}
+    </p>
+</div>
+<div *ngIf="description.length > 130">
+    <p *ngIf="!visible">
+        {{description.substring(0, 130)}}...
+    </p>
+    <p class="text-primary ml-5" *ngIf="!visible" (click)="toggleVisible('show')">(Show more)</p>
+    <p *ngIf="visible">
+        {{description}}
+    </p>
+    <p class="text-primary ml-5" *ngIf="visible" (click)="toggleVisible('hide')">(Show less)</p>
+</div>

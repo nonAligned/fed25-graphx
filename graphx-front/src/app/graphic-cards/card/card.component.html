@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-2">
+        <img src="{{card?.image}}" width="80%">
+    </div>
+    <div class="col-10">
+        <h4><span class="text-primary" (click)="toggleComments()">{{card?.title}}</span><small> {{card?.subtitle}}</small></h4>
+        <graphx-show-more [description]="card?.description" [length]="130"></graphx-show-more>
+        <div class="float-right">
+            <button class="btn btn-success" (click)="changeGrade('+')">+</button>
+            {{card?.grade}}
+            <button class="btn btn-danger" (click)="changeGrade('-')">-</button>
+        </div>
+    </div>
+</div>

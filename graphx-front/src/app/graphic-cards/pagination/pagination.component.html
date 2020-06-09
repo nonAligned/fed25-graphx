@@ -1,0 +1,14 @@
+<div class="row">
+    <div class="col-2"></div>
+    <div class="col-10">
+        <div class="float-left">
+            <button class="btn btn-primary mr-2" *ngIf="!firstPage" (click)="changePage('prev')">« Previous</button>
+            <button class="btn btn-primary" *ngIf="!lastPage" (click)="changePage('next')">Next »</button>
+        </div>
+        <div class="float-right btn-group">
+            <button class="btn btn-secondary" (click)="changePageSize(5)">5</button>
+            <button class="btn btn-secondary" (click)="changePageSize(10)">10</button>
+            <button class="btn btn-secondary" (click)="changePageSize(20)">20</button>
+        </div>
+    </div>
+</div>
